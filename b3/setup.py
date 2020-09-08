@@ -915,34 +915,6 @@ class Update(Setup):
         _currentversion = version.LooseVersion(__version__)
         self.add_buffer('Current B3 version: %s\n' % _currentversion )
 
-        # update to v1.3.0
-        if _currentversion >= '1.3.0':
-            self.executeSql('@b3/sql/b3-update-1.3.0.sql', _dbstring)
-            self.add_buffer('Updating database to version 1.3.0...\n')
-        else:
-            self.add_buffer('Version older than 1.3.0...\n')
-
-        # update to v1.6.0
-        if _currentversion >= '1.6.0':
-            self.executeSql('@b3/sql/b3-update-1.6.0.sql', _dbstring)
-            self.add_buffer('Updating database to version 1.6.0...\n')
-        else:
-            self.add_buffer('Version older than 1.6.0...\n')
-
-        # update to v1.7.0
-        if _currentversion >= '1.7.0':
-            self.executeSql('@b3/sql/b3-update-1.7.0.sql', _dbstring)
-            self.add_buffer('Updating database to version 1.7.0...\n')
-        else:
-            self.add_buffer('Version older than 1.7.0...\n')
-
-        # update to v1.8.1
-        if _currentversion >= '1.8.1':
-            self.executeSql('@b3/sql/b3-update-1.8.1.sql', _dbstring)
-            self.add_buffer('Updating database to version 1.8.1...\n')
-        else:
-            self.add_buffer('Version older than 1.8.1...\n')
-
         # update to v1.9.0
         if _currentversion >= '1.9.0':
             self.executeSql('@b3/sql/b3-update-1.9.0.sql', _dbstring)
